@@ -17,14 +17,10 @@ return {
       position = 'right',
     },
     filesystem = {
-      hide_dotfiles = false,
-      hide_gitignored = false,
-      hijack_netrw_behavior = 'open_current',
-      window = {
-        mappings = {
-          ['\\'] = 'close_window',
-        },
+      filtered_items = {
+        visible = true,
       },
+      hijack_netrw_behavior = 'open_current',
     },
   },
 }

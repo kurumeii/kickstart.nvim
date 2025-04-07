@@ -5,25 +5,40 @@ return {
     config = function()
       require('ayu').setup {
         mirage = true,
-        terminal = true,
+        terminal = false,
       }
-      vim.cmd.colorscheme 'ayu-mirage'
+      vim.cmd.colorscheme 'ayu'
     end,
   },
   {
     'romgrk/barbar.nvim',
     init = function()
-      vim.g.barbar_auto_setup = true
+      vim.g.barbar_auto_setup = false
     end,
-    config = function()
-      local map = vim.api.nvim_set_keymap
-      local opts = {
-        noremap = true,
+    opts = {
+      animation = true,
+      insert_at_start = true,
+    },
+    cmd = 'Barbar',
+    keys = {
+      {
+        '<leader>B.',
+        '<Cmd>BufferNext<CR>',
+        desc = 'Move next tab',
         silent = true,
-      }
-      -- move to prev/next tab
-      map('n', '<leader>n-.>', '<Cmd>BufferNext<CR>', opts)
-      map('n', '<leader>n-,>', '<Cmd>BufferPrevious<CR>', opts)
-    end,
+      },
+      {
+        '<leader>B,',
+        '<Cmd>BufferPrevious<CR>',
+        desc = 'Move previous tab',
+        silent = true,
+      },
+      {
+        '<leader>Bx',
+        '<Cmd>BufferClose<CR>',
+        desc = 'Close current tab',
+        silent = true,
+      },
+    },
   },
 }

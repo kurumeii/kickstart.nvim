@@ -3,7 +3,8 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Set to true if you have a Nerd Font installed and selected in the terminal
+-- Open pwsh instead
+vim.o.shell = 'pwsh.exe'
 vim.g.have_nerd_font = true
 
 -- Make line numbers default
